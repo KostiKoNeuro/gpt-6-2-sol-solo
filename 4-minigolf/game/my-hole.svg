@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 600" role="img" aria-labelledby="title description">
+  <title id="title">Tideline mini-golf blueprint</title>
+  <desc id="description">From the tee at left, a boost strip and timed gate cross a narrow pier with open edges. A longer walled route goes down around the bay, through sand, and back up to the cup at right.</desc>
+  <defs>
+    <filter id="ink" x="-5%" y="-12%" width="110%" height="124%">
+      <feTurbulence type="fractalNoise" baseFrequency=".035 .11" numOctaves="2" seed="14" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale="2.2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <pattern id="waves" width="75" height="23" patternUnits="userSpaceOnUse">
+      <path d="M-9 12 Q.5 4 10 12 T29 12 T48 12 T67 12 T86 12" fill="none" stroke="#2e70ce" stroke-width="2.1" opacity=".78"/>
+    </pattern>
+    <pattern id="sand-dots" width="19" height="17" patternUnits="userSpaceOnUse" fill="#d39714">
+      <circle cx="3" cy="5" r="1.75"/><circle cx="13" cy="3" r="1.1"/><circle cx="10" cy="13" r="1.5"/><circle cx="18" cy="9" r="1.1"/>
+    </pattern>
+    <path id="outer" d="M91 234 108 193 153 148 293 148 334 173 355 219 731 219 762 170 818 138 912 138 955 171 974 217 967 285 944 324 914 350 914 451 890 490 850 516 194 516 141 489 104 447 91 399Z"/>
+    <path id="lagoon" d="M282 275 731 275 772 299 801 334 809 396 789 424 756 436 239 436 210 417 200 390 200 336 225 302Z"/>
+    <mask id="sea">
+      <rect width="1060" height="600" fill="white"/>
+      <use href="#outer" fill="black"/>
+      <use href="#lagoon" fill="white"/>
+    </mask>
+    <g id="start" stroke="#252522" stroke-width="3.1">
+      <circle r="18" fill="#fcfaf0"/>
+      <circle r="4.3" fill="#252522" stroke="none"/>
+    </g>
+    <g id="cup" stroke="#252522" stroke-width="3.1" stroke-linejoin="round">
+      <circle r="13" fill="#fcfaf0"/>
+      <path d="M0 0V-54" fill="none"/>
+      <path d="M0-53Q17-56 41-44Q22-32 0-32Z" fill="#e75a49"/>
+    </g>
+    <g id="boost">
+      <rect width="69" height="40" rx="4" fill="#b9e9dd" stroke="#137265" stroke-width="2.8"/>
+      <path d="m13 9 11 11-11 11m16-22 11 11-11 11m16-22 11 11-11 11" fill="none" stroke="#137265" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g id="gate" fill="none" stroke="#bd513e" stroke-width="3">
+      <path d="M0 0V81" stroke-dasharray="5 4" stroke-linecap="round"/>
+      <path d="M-7 12H7M-7 81H7" stroke-width="2"/>
+      <rect x="-8" y="-7" width="16" height="16" rx="3" fill="#f8c5ab" stroke="#5b3931"/>
+    </g>
+    <style>
+      text { fill: #252522; font-family: 'Arial Black', 'Segoe UI', sans-serif; font-weight: 900; }
+      .side-note { font-family: 'Segoe UI', sans-serif; font-weight: 650; letter-spacing: .1px; }
+    </style>
+  </defs>
+
+  <rect width="1060" height="600" fill="#fcfaf0"/>
+  <g mask="url(#sea)">
+    <path d="M58 176 85 145 137 125 996 125 1007 165 1008 487 972 534 936 542 124 542 60 508 49 471 48 213Z" fill="#d6e6f8"/>
+    <path d="M63 180 83 150 139 130 988 130 1001 165 1002 484 968 528 931 536 129 536 66 504 55 468 55 221Z" fill="url(#waves)" filter="url(#ink)"/>
+  </g>
+  <use href="#outer" fill="#e4efd8"/>
+  <use href="#lagoon" fill="#d6e6f8"/>
+  <use href="#lagoon" fill="url(#waves)" filter="url(#ink)"/>
+  <path d="M355 219H731V275H355Z" fill="#f4dfbd" stroke="#9a724e" stroke-width="1.7"/>
+  <path d="M370 220v54m18-54v54m18-54v54m18-54v54m18-54v54m18-54v54m18-54v54m18-54v54m18-54v54m18-54v54m18-54v54m18-54v54m18-54v54m18-54v54m18-54v54m18-54v54m18-54v54m18-54v54m18-54v54m18-54v54m18-54v54" fill="none" stroke="#ae8661" stroke-width="1" opacity=".55"/>
+  <g fill="none" stroke="#252522" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#ink)">
+    <path id="outer-wall" d="M731 219 762 170 818 138 912 138 955 171 974 217 967 285 944 324 914 350 914 451 890 490 850 516 194 516 141 489 104 447 91 399 91 234 108 193 153 148 293 148 334 173 355 219"/>
+    <path id="inner-wall" d="M731 275 772 299 801 334 809 396 789 424 756 436 239 436 210 417 200 390 200 336 225 302 282 275 355 275"/>
+  </g>
+  <g id="sand" transform="rotate(-3 461 477)">
+    <ellipse cx="461" cy="477" rx="98" ry="27" fill="#f8e6ab"/>
+    <ellipse cx="461" cy="477" rx="98" ry="27" fill="url(#sand-dots)" stroke="#c59023" stroke-width="2.25" stroke-dasharray="4.8 4" filter="url(#ink)"/>
+  </g>
+  <g filter="url(#ink)">
+    <use href="#start" x="164" y="248"/>
+    <use href="#cup" x="880" y="210"/>
+    <use href="#boost" x="408" y="227"/>
+    <use href="#gate" x="566" y="197"/>
+  </g>
+
+  <g font-size="13" letter-spacing="1.15" filter="url(#ink)">
+    <path d="M465 296 Q530 298 600 296 m-10-6 11 6-11 6" stroke="#35596c" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="532" y="320" text-anchor="middle">FLOODGATE SHORTCUT</text>
+    <path d="M144 357v27 m-5-8 5 9 5-9 M744 477h33 m-8-5 9 5-9 5 M863 402v-27 m-5 8 5-9 5 9" fill="none" stroke="#53734c" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="731" y="481" text-anchor="end">SEAWALL ROUTE</text>
+  </g>
+
+  <g transform="translate(89 61)">
+    <text font-size="42" letter-spacing="2" filter="url(#ink)">TIDELINE</text>
+    <path d="M1 9q85-3 216 0" fill="none" stroke="#252522" stroke-width="3.1" stroke-linecap="round" filter="url(#ink)"/>
+    <text class="side-note" y="34" font-size="16">Thread the floodgate or round the seawall.</text>
+    <text x="2" y="56" font-size="11" letter-spacing="1.5">PAR 5</text>
+  </g>
+
+  <g transform="translate(617 22)">
+    <rect width="409" height="97" rx="10" fill="#fcfaf0" stroke="#252522" stroke-width="2.5" filter="url(#ink)"/>
+    <text x="15" y="21" font-size="11" letter-spacing="1.6">LEGEND</text>
+    <path d="M15 27h379" stroke="#252522" stroke-width="1" opacity=".25"/>
+    <g font-size="13" filter="url(#ink)">
+      <use href="#start" transform="translate(25 47) scale(.54)"/>
+      <text x="42" y="51">START</text>
+      <use href="#cup" transform="translate(120 52) scale(.37)"/>
+      <text x="139" y="51">HOLE</text>
+      <path d="M202 47h21" stroke="#252522" stroke-width="5" stroke-linecap="round"/>
+      <text x="232" y="51">WALL</text>
+      <rect x="319" y="39" width="27" height="16" rx="6" fill="#d6e6f8" stroke="#2e70ce" stroke-width="1.6"/>
+      <path d="M322 47q5-5 10 0t10 0" fill="none" stroke="#2e70ce" stroke-width="1.6"/>
+      <text x="352" y="51" font-size="12">WATER</text>
+      <ellipse cx="25" cy="75" rx="12" ry="8" fill="#f8e6ab"/>
+      <ellipse cx="25" cy="75" rx="12" ry="8" fill="url(#sand-dots)" stroke="#c59023" stroke-width="1.6" stroke-dasharray="2.3 2"/>
+      <text x="42" y="79">SAND</text>
+      <use href="#boost" transform="translate(108 68) scale(.38)"/>
+      <text x="139" y="79">BOOST</text>
+      <path d="M213 68v15" stroke="#bd513e" stroke-width="5.8" stroke-linecap="round"/>
+      <path d="m211 71 4 2m-4 3 4 2M208 68h10" fill="none" stroke="#755044" stroke-width="1.4" stroke-linecap="round"/>
+      <text x="228" y="79" font-size="12">TIMED GATE</text>
+      <rect x="319" y="67" width="27" height="16" rx="1.6" fill="#f4dfbd" stroke="#9a724e" stroke-width="1.6"/>
+      <path d="M328 68v14m9-14v14" fill="none" stroke="#9a724e" stroke-width="1.2"/>
+      <text x="352" y="79" font-size="12">PIER</text>
+    </g>
+  </g>
+</svg>
